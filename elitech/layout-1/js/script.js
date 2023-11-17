@@ -10,64 +10,47 @@ let botao = form.querySelector("#btn-reset");
 let caixaDeTexto = document.getElementById("cod");
 
 function gerarCodigoFonte() {
-  
-    //Alterando o texto do botão de Copiar
-    botao.innerHTML = `Copiar`;
+  //Alterando o texto do botão de Copiar
+  botao.innerHTML = `Copiar`;
 
-    //Selecionando os componentes do html
+  //Selecionando os componentes do html
 
-    //pegando os valores do titulo
-    const tituloGeral = form.querySelector("#tituloGeral").value;
-    const textoTitulo = form.querySelector("#textoTitulo").value;
+  //pegando os valores do titulo
+  const tituloGeral = form.querySelector("#tituloGeral").value;
+  const textoTitulo = form.querySelector("#textoTitulo").value;
 
-    //pegando valores do primeiro bloco
-    const tituloPrimeiroBloco = form.querySelector(
-      "#tituloPrimeiroBloco"
-    ).value;
-    const imagemPrimeiroBloco = form.querySelector(
-      "#imagemPrimeiroBloco"
-    ).value;
-    const altImagemPrimeiroBloco = form.querySelector(
-      "#altImagemPrimeiroBloco"
-    ).value;
-    const textoPrimeiroBloco = form.querySelector("#textoPrimeiroBloco").value;
+  //pegando valores do primeiro bloco
+  const tituloPrimeiroBloco = form.querySelector("#tituloPrimeiroBloco").value;
+  const imagemPrimeiroBloco = form.querySelector("#imagemPrimeiroBloco").value;
+  const altImagemPrimeiroBloco = form.querySelector("#altImagemPrimeiroBloco").value;
+  const textoPrimeiroBloco = form.querySelector("#textoPrimeiroBloco").value;
 
-    //pegando valores do segundo bloco
-    const tituloSegundoBloco = form.querySelector("#tituloSegundoBloco").value;
-    const imagemSegundoBloco = form.querySelector("#imagemSegundoBloco").value;
-    const altImagemSegundoBloco = form.querySelector(
-      "#altImagemSegundoBloco"
-    ).value;
-    const textoSegundoBloco = form.querySelector("#textoSegundoBloco").value;
+  //pegando valores do segundo bloco
+  const tituloSegundoBloco = form.querySelector("#tituloSegundoBloco").value;
+  const imagemSegundoBloco = form.querySelector("#imagemSegundoBloco").value;
+  const altImagemSegundoBloco = form.querySelector("#altImagemSegundoBloco").value;
+  const textoSegundoBloco = form.querySelector("#textoSegundoBloco").value;
 
-    //pegando valores do terceiro bloco
-    const tituloTerceiroBloco = form.querySelector(
-      "#tituloTerceiroBloco"
-    ).value;
-    const imagemTerceiroBloco = form.querySelector(
-      "#imagemTerceiroBloco"
-    ).value;
-    const altImagemTerceiroBloco = form.querySelector(
-      "#altImagemTerceiroBloco"
-    ).value;
-    const textoTerceiroBloco = form.querySelector("#textoTerceiroBloco").value;
+  //pegando valores do terceiro bloco
+  const tituloTerceiroBloco = form.querySelector("#tituloTerceiroBloco").value;
+  const imagemTerceiroBloco = form.querySelector("#imagemTerceiroBloco").value;
+  const altImagemTerceiroBloco = form.querySelector("#altImagemTerceiroBloco").value;
+  const textoTerceiroBloco = form.querySelector("#textoTerceiroBloco").value;
 
-    //pegando valores do quarto bloco
-    const tituloEsquero = form.querySelector("#tituloEsquerdo").value;
-    const tituloDireito = form.querySelector("#tituloDireito").value;
-    const textoBlocoEsquerdo = form.querySelector("#textoBlocoEsquerdo").value;
-    const textoBlocoDireito = form.querySelector("#textoBlocoDireito").value;
+  //pegando valores do quarto bloco
+  const tituloEsquero = form.querySelector("#tituloEsquerdo").value;
+  const tituloDireito = form.querySelector("#tituloDireito").value;
+  const textoBlocoEsquerdo = form.querySelector("#textoBlocoEsquerdo").value;
+  const textoBlocoDireito = form.querySelector("#textoBlocoDireito").value;
 
-    //Pegando valores do quinto bloco
-    const tituloQuintoBloco = form.querySelector("#tituloQuintoBloco").value;
-    const imagemQuintoBloco = form.querySelector("#imagemQuintoBloco").value;
-    const altImagemQuintoBloco = form.querySelector(
-      "#altImagemQuintoBloco"
-    ).value;
-    const textoQuintoBloco = form.querySelector("#textoQuintoBloco").value;
+  //Pegando valores do quinto bloco
+  const tituloQuintoBloco = form.querySelector("#tituloQuintoBloco").value;
+  const imagemQuintoBloco = form.querySelector("#imagemQuintoBloco").value;
+  const altImagemQuintoBloco = form.querySelector("#altImagemQuintoBloco").value;
+  const textoQuintoBloco = form.querySelector("#textoQuintoBloco").value;
 
-    //Inserindo o código-fonte na variável codigoFonte e já adionando os valores das variáveis
-    let codigoFonte = `<section class="personalizado">
+  //Inserindo o código-fonte na variável codigoFonte e já adionando os valores das variáveis
+  let codigoFonte = `<section class="personalizado">
         <div class="personalizado-banner">
           <div class="row align-center">
             <div class="columns perso-large-10">
@@ -189,35 +172,28 @@ function gerarCodigoFonte() {
         
       </section>`;
 
-    //Definindo o valor da variável codigoFonte no elemento html textarea (adicionando o valor da variável na página)
-    caixaDeTexto.innerHTML = codigoFonte;
+  //Definindo o valor da variável codigoFonte no elemento html textarea (adicionando o valor da variável na página)
+  caixaDeTexto.innerHTML = codigoFonte;
 }
-  //Escutando o evento de resetar o formulário
-  form.addEventListener("reset", copiarTexto);
-  function copiarTexto(evento) {
-    //Impedindo o formulário de recarregar
-    evento.preventDefault();
-    // pegando o elemento
-    let copyText = document.getElementById("cod");
 
-    // Selecionando todo o texto dentro do textarea
-    copyText.select();
-    copyText.setSelectionRange(0, 99999); //Se for mobile, isso vai ajudar
+function copiarTexto() {
 
-    //Copiando o conteúdo selecionado
-    document.execCommand("copy");
+  // pegando o elemento
+  let copyText = document.getElementById("cod");
 
-    //Avisando que foi copiado
-    //alert('Copiado!');
+  // Selecionando todo o texto dentro do textarea
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); //Se for mobile, isso vai ajudar
 
-    //Limpando a caixa após copiar
-    caixaDeTexto.innerHTML = "";
+  //Copiando o conteúdo selecionado
+  document.execCommand("copy");
 
-    //Alterando o texto do botão de Copiar
-    botao.innerHTML = `Copiado!`;
-  }
+  //Limpando a caixa após copiar
+  caixaDeTexto.innerHTML = "";
 
-
+  //Alterando o texto do botão de Copiar
+  botao.innerHTML = `Copiado!`;
+}
 
 function mostrarCSS() {
   //Alterando o texto do botão de Copiar
